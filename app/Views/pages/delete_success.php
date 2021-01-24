@@ -1,0 +1,1 @@
+Strona została usunięta.
