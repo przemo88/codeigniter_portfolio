@@ -1,0 +1,113 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #e9ecef; }
+
+@media (max-width: 768px) {
+  img {
+    width: 50%;
+    margin-left: 25%; } }
+@media (min-width: 769px) and (max-width: 1139px) {
+  img {
+    width: 50%;
+    margin-left: 25%; } }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 30px; } }
+
+.jumbotron-text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+  padding-top: 280px; }
+  @media (max-width: 1140px) and (min-width: 769px) {
+    .jumbotron-text {
+      padding-top: 60px; } }
+  @media (max-width: 768px) {
+    .jumbotron-text {
+      padding-top: 130px;
+      font-size: 22px; } }
+  @media (orientation: landscape) and (max-width: 768px) {
+    .jumbotron-text {
+      padding-top: 24px; } }
+
+@media (max-width: 768px) {
+  .link_icon {
+    width: 20%; } }
+
+@media (max-width: 768px) {
+  i {
+    font-size: 35px !important; } }
+
+.name {
+  padding-top: 15%;
+  font-weight: bold;
+  font-style: italic; }
+
+.nav-link {
+  color: black !important; }
+
+.jumbotron {
+  padding: 0;
+  margin: 0;
+  background: url("https://cdn.pixabay.com/photo/2017/07/31/11/44/laptop-2557572_1280.jpg") center center;
+  height: 93vh;
+  background-size: cover;
+  text-align: center; }
+  @media (orientation: landscape) and (max-width: 768px) {
+    .jumbotron {
+      height: 150vh; } }
+
+.navbar-center {
+  left: 0;
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  background-color: #322117;
+  z-index: 1000; }
+  @media (min-width: 768px) {
+    .navbar-center {
+      position: fixed; } }
+  .navbar-center li {
+    width: 15%; }
+    @media (min-width: 768px) {
+      .navbar-center li:first-child {
+        margin-left: 20%; } }
+    .navbar-center li .span {
+      color: #fff !important; }
+
+.bg-light {
+  background-color: #322117 !important; }
+  @media (min-width: 768px) {
+    .bg-light {
+      height: 50px !important;
+      color: red !important; } }
+
+.nav-link {
+  padding-top: 25px; }
+
+@media (max-width: 1140px) {
+  .navbar {
+    padding: 0 !important; }
+    .navbar ul {
+      width: 100% !important; }
+      .navbar ul li {
+        width: 100% !important; } }
+
+.desc {
+  font-size: 25px; }
+
+a {
+  color: #fff; }
+  a:hover {
+    color: #fff;
+    text-decoration: none; }
+
+.link {
+  color: #2b2cd9; }
+  .link:hover {
+    color: rgba(43, 44, 217, 0.65);
+    text-decoration: none;
+    background-color: transparent !important; }
+
+/*# sourceMappingURL=static.css.map */

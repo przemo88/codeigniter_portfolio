@@ -3,14 +3,17 @@
 use App\Models\EmailModel;
 use CodeIgniter\Controller;
 
-class Start extends Controller{
+class Statics extends Controller{
+
 
     public function index(){
-        return view('start/index');
+        echo view('statics/menu');
+        echo view('statics/index');
     }
 
     public function contact(){
-        return view('start/contact');
+        echo view('statics/menu');
+        echo view('statics/contact');
     }
 
     public function send(){
@@ -37,12 +40,12 @@ class Start extends Controller{
 
         $session = session();
         $session->setFlashData('success','Dziękuję za wysłanie emaila');
-        echo view('start/email_success');
+        echo view('statics/email_success');
     }
        
         else
         {
-            echo view('start/contact');
+            echo view('statics/contact');
         }
     }
 }

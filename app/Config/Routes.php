@@ -31,15 +31,16 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->match(['get','post'], 'pages/add','Pages::add');
-$routes->get('/', 'Start::index');
+$routes->get('/', 'Statics::index');
 $routes->get('pages', 'Pages::index');
 $routes->get('pages/(:segment)', 'Pages::view/$1');
 $routes->get('pages/(:segment)/edit', 'Pages::edit/$1');
-$routes->post('pages/update', 'Pages::update');
+$routes->get('pages/update', 'Pages::update');
 $routes->get('pages/(:segment)/destroy', 'Pages::destroy/$1');
 $routes->delete('pages/delete', 'Pages::delete');
-$routes->get('/contact','Start::contact');
-$routes->post('/contact/send','Start::send');
+$routes->get('/contact','Statics::contact');
+$routes->post('/contact/send','Statics::send');
+
 
 /**
  * --------------------------------------------------------------------

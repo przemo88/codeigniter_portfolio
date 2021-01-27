@@ -1,0 +1,83 @@
+img {
+  width: 100%;
+  margin: 0; }
+
+.form_text {
+  text-align: center; }
+
+.chose {
+  padding: 0;
+  margin: 0;
+  border: 1px solid green;
+  background-color: blue; }
+
+.mt-50 {
+  margin-top: 50px; }
+
+.title {
+  text-align: center;
+  margin-top: 50px; }
+
+.text_area {
+  height: 200px;
+  resize: none; }
+
+#portfolio {
+  margin-bottom: 150px; }
+
+.contact_title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  height: 150px;
+  padding-top: 100px; }
+
+.margin_xl_top {
+  margin-top: 150px; }
+  @media (max-width: 1140px) and (min-width: 769px) {
+    .margin_xl_top {
+      margin-top: 0; } }
+  @media (max-width: 768px) {
+    .margin_xl_top {
+      margin-top: 10px; } }
+
+.website .sample_title {
+  font-weight: bold;
+  text-align: center; }
+.website:nth-child(odd) {
+  margin-left: 5px; }
+
+.sample_title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px; }
+
+.link {
+  text-align: center; }
+  .link a {
+    color: blue; }
+
+.show {
+  margin-top: 100px; }
+
+.show_title {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center; }
+
+.desc_style {
+  margin-top: 25px;
+  padding: 0;
+  text-align: justify; }
+
+.delete_btn {
+  text-align: center;
+  margin-top: 25px; }
+
+ul {
+  list-style: none; }
+
+.link_href a {
+  color: blue; }
+
+/*# sourceMappingURL=pages.css.map */

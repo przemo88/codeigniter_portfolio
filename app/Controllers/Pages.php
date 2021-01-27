@@ -14,14 +14,14 @@ class Pages extends Controller{
             'name' => 'Strony',
         ];
 
+        echo view('statics/menu');
         echo view('pages/index', $data);
     }
 
     public function view($id = null){
+        echo view('statics/menu');
         $model = new PagesModel();
         $data['pages'] = $model->getPages($id);
-
-        //$data['name'] = $data['pages']['name'];
 
         if (empty($data['pages']))
     {
@@ -34,6 +34,7 @@ class Pages extends Controller{
 
     public function add()
 {
+    echo view('statics/menu');
     $model = new PagesModel();
 
     if ($this->request->getMethod() === 'post' && $this->validate([
@@ -65,7 +66,7 @@ class Pages extends Controller{
         'website' => $this->request->getPost('website'),
         'image' => $image_name
     ]);
-
+    
     echo view('pages/add_success');
     }
         catch (\Exception $e)
@@ -80,6 +81,8 @@ class Pages extends Controller{
 }
 
     public function edit($id = null){
+        
+        echo view('statics/menu');
         $model = new PagesModel();
         $data['pages'] = $model->getPages($id);
 
@@ -144,8 +147,8 @@ class Pages extends Controller{
      ];
  
         $model->update($id, $data);
-
-    echo view('pages/update_success');
+      
+    echo('pages/update_success');
     }
         catch (\Exception $e)
             {
