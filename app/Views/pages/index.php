@@ -1,6 +1,30 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/pages.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/font-awesome/css/font-awesome.min.css'); ?>">
 
+<?php if (isset($_SESSION['update_success'])): ?>
+    <div class="alert alert-success text-center" role="alert">
+        <?= $_SESSION['update_success']; ?>     
+    </div>
+<?php endif;?>
+
+<?php if (isset($_SESSION['add_success'])): ?>
+    <div class="alert alert-success text-center" role="alert">
+        <?= $_SESSION['add_success']; ?>     
+    </div>
+<?php endif;?>
+
+<?php if (isset($_SESSION['delete_success'])): ?>
+    <div class="alert alert-success text-center" role="alert">
+        <?= $_SESSION['delete_success']; ?>     
+    </div>
+<?php endif;?>
+
+<?php if (isset($_SESSION['email_success'])): ?>
+    <div class="alert alert-success text-center" role="alert">
+        <?= $_SESSION['email_success']; ?>     
+    </div>
+<?php endif;?>
+
 <?php if (! empty($pages) && is_array($pages)) : ?>
 <section class="portfolio">
 <div class="container">
@@ -19,7 +43,7 @@
 
 <?php else : ?>
 
-    <h3 class="show_title">Brak stron</h3>
+    <h3 class="show_title mt-50">Brak stron</h3>
 
     <p class="show_title">Dodaj nową stronę.</p>
         </div>

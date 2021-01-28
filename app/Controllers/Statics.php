@@ -38,9 +38,11 @@ class Statics extends Controller{
         
         $email->send();
 
+        $session = \Config\Services::session();
+        $_SESSION['email_success'] = 'Dziękuję, email został wysłany.';
         $session = session();
-        $session->setFlashData('success','Dziękuję za wysłanie emaila');
-        echo view('statics/email_success');
+        $session->markAsFlashdata('email_success');
+        return redirect()->to(base_url('pages'));
     }
        
         else

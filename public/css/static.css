@@ -110,4 +110,9 @@ a {
     text-decoration: none;
     background-color: transparent !important; }
 
+.form_border div {
+  border: 1px solid #000; }
+  .form_border div:nth-child(n+2) {
+    border-top: none; }
+
 /*# sourceMappingURL=static.css.map */

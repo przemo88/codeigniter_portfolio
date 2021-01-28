@@ -8,7 +8,6 @@
         <form class="col-lg-12 col-12" action="/pages/update" method="post" enctype="multipart/form-data">
             <?= csrf_field() ?>
             <div class="col-lg-8 offset-lg-2">
-                <label for="id" class="col-lg-4 offset-lg-4 form_text">ID</label>
                 <input type="input" name="id" class="col-lg-12" value=<?= esc($pages['id']); ?> hidden />
             </div>
             <div class="col-lg-8 offset-lg-2">

@@ -6,6 +6,7 @@ use CodeIgniter\Controller;
 class Pages extends Controller{
 
     public function index(){
+        $session = \Config\Services::session();
         $image = \Config\Services::image();
         $model = new PagesModel();
        
@@ -34,6 +35,7 @@ class Pages extends Controller{
 
     public function add()
 {
+    $session = \Config\Services::session();
     echo view('statics/menu');
     $model = new PagesModel();
 
@@ -53,7 +55,6 @@ class Pages extends Controller{
 
         try
     {
-        
         $image = $this->request->getFile('image');
         $image->move(ROOTPATH . 'public/image/');
 
@@ -67,11 +68,15 @@ class Pages extends Controller{
         'image' => $image_name
     ]);
     
-    echo view('pages/add_success');
+        $session = \Config\Services::session();
+        $_SESSION['add_success'] = 'Strona została dodana.';
+        $session = session();
+        $session->markAsFlashdata('add_success');
+        return redirect()->to(base_url('pages'));
     }
         catch (\Exception $e)
         {
-            //die($e->getMessage()); 
+            die($e->getMessage()); 
         }
     }
     else
@@ -85,8 +90,6 @@ class Pages extends Controller{
         echo view('statics/menu');
         $model = new PagesModel();
         $data['pages'] = $model->getPages($id);
-
-        //$data['name'] = $data['pages']['name'];
 
         if (empty($data['pages']))
         {
@@ -103,11 +106,10 @@ class Pages extends Controller{
         {
         throw new \CodeIgniter\Exceptions\PageNotFoundException('Nie znaleziono strony o id równym: '. $id);
         }
-
-      
-        //$model->where('id', $id)->delete();
-
-        echo view('pages/destroy',$data);
+        else{
+            echo view('statics/menu');
+            echo view('pages/destroy',$data);
+        }
     }
 
     public function delete(){
@@ -115,13 +117,15 @@ class Pages extends Controller{
         $model = new PagesModel();
         $id =  $this->request->getPost('id');
         $file_name = $this->request->getPost('image');
-        //$model->where('id', $id)->delete();
-       
-        delete_files('/public/image/phototime.png');
-        //delete_files('/public/image/phototime.png');
-        echo '/public/image/' . $file_name;
-        //echo view('pages/delete_success');
+        $model->where('id', $id)->delete();
 
+        unlink(ROOTPATH . "public/image/". $file_name);
+       
+        $session = \Config\Services::session();
+        $_SESSION['delete_success'] = 'Dane zostały usunięte.';
+        $session = session();
+        $session->markAsFlashdata('delete_success');
+        return redirect()->to(base_url('pages'));
     }
 
     public function update(){
@@ -145,10 +149,14 @@ class Pages extends Controller{
          'website' => $this->request->getPost('website'),
          'image' => $image_name
      ];
- 
+
         $model->update($id, $data);
-      
-    echo('pages/update_success');
+        $session = \Config\Services::session();
+        $_SESSION['update_success'] = 'Dane zostały zaktualizowane.';
+        $session = session();
+        $session->markAsFlashdata('update_success');
+        return redirect()->to(base_url('pages'));
+
     }
         catch (\Exception $e)
             {

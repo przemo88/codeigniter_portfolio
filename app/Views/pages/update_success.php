@@ -1,1 +1,0 @@
-Strona została zaktualizowana.
