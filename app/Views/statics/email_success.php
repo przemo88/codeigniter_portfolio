@@ -1,1 +1,0 @@
-Dziękuję, email został wysłany.

@@ -28,7 +28,7 @@
 <?php if (! empty($pages) && is_array($pages)) : ?>
 <section class="portfolio">
 <div class="container">
-    <div class="row show">
+    <div class="row">
     <?php foreach ($pages as $item): ?>
 
         <div class="website margin_top margin_xl_top col-lg-5 col-12 offset-lg-1 image">

@@ -1,4 +1,7 @@
-<?= \Config\Services::validation()->listErrors(); ?>
+<?php if(\Config\Services::validation()->listErrors()): ?>
+<div class="alert alert-danger text-center"><?= \Config\Services::validation()->listErrors(); ?></div>
+<?php endif; ?>
+
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/pages.css'); ?>">
 
 <section>
@@ -21,7 +24,7 @@
                 <textarea class="col-lg-12 text_area" name="message"></textarea>
             </div>
             <div class="col-lg-8 offset-lg-2">
-                <input type="submit" name="submit" class="col-lg-2 offset-lg-5 mt-50" value="Wyślij" />
+                <input type="submit" name="submit" class="col-lg-2 offset-lg-5 mt-50 btn btn-outline-primary" value="Wyślij" />
         </form>
         
         <div class="link"><a href="/">Powrót</div>

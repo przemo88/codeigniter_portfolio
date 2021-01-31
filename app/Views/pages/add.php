@@ -1,4 +1,7 @@
-<?= \Config\Services::validation()->listErrors(); ?>
+<?php if(\Config\Services::validation()->listErrors()): ?>
+<div class="alert alert-danger text-center"><?= \Config\Services::validation()->listErrors(); ?></div>
+<?php endif; ?>
+
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/pages.css'); ?>">
 <section>
 <div class="container">
@@ -26,7 +29,7 @@
             <div class="col-lg-8 offset-lg-2">
                 <label for="image" class="col-lg-4 offset-lg-4 form_text">Zdjęcie</label>
                 <input type="file" name="image" value=<?= esc($pages['image']); ?> />
-                <input type="submit" name="submit" class="col-lg-2 offset-lg-5 mt-50" value="Zapisz" />
+                <input type="submit" name="submit" class="col-lg-2 offset-lg-5 mt-50 btn btn-outline-primary" value="Zapisz" />
        
         </form>
         
@@ -35,3 +38,12 @@
 </div>
 
 </section>
+
+}
+
+
+
+
+?>
+
+<

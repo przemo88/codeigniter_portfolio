@@ -2,13 +2,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('/font-awesome/css/font-awesome.min.css'); ?>">
 <section>
         <div class="container">
-        <div class="row show test">
+        <div class="row show">
 
                 <div class="col-lg-6 col-12 col-sm-12 offset-lg-3 show_title"><?= esc($pages['name']); ?></div>
 
                 <div class="col-lg-6 col-12 col-sm-12 offset-lg-3"><img src="/image/<?= esc($pages['image']); ?>"></img></div>
 
-                <div class="col-lg-6 col-12 col-sm-12 offset-lg-3">
+                <div class="col-lg-6 col-6 col-sm-6 offset-lg-3">
 
                 <a href="http://<?= esc($pages['github']); ?>">
                         <i class="fa fa-github  git fa-2x link link_icon"></i></a>   
