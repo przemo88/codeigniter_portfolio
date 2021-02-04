@@ -65,7 +65,7 @@ else
     if ($this->request->getMethod() === 'post' && $this->validate([
             'name' => [
                 'label' => 'name',
-                'rules' => 'required|min_length[3]|max_length[5]',
+                'rules' => 'required|min_length[3]|max_length[20]',
                 'errors' => [
                     'required' => 'Podaj nazwę.',
                     'min_length' => 'Nazwa nie może być krótsza niż 3 znaki.',

@@ -10,9 +10,9 @@
 
                 <div class="col-lg-6 col-6 col-sm-6 offset-lg-3">
 
-                <a href="http://<?= esc($pages['github']); ?>">
+                <a href="<?= esc($pages['github']); ?>">
                         <i class="fa fa-github  git fa-2x link link_icon"></i></a>   
-                <a href="http://<?= esc($pages['website']); ?>">
+                <a href="<?= esc($pages['website']); ?>">
                         <i class="fa fa-camera-retro fa-2x git link link_icon"></i>
 
                 </div>

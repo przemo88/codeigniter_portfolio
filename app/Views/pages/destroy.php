@@ -8,12 +8,12 @@
         <div class="row form_border">
             <div class="col-12 col-lg-12 col-12 "><?= esc($pages['name']); ?></div>
             <form action="/pages/delete" method="post">
-                <input type="submit" name="submit" value="Usuń" />
+                <input type="submit" name="submit" class="btn btn-outline-primary" value="Usuń" />
                     <input type="input" name="id" value=<?= esc($pages['id']); ?> hidden />
                     <input type="input" name="image" value=<?= esc($pages['image']); ?> hidden />
             </form>
             <form action="/pages" method="post">
-                <input type="submit" name="submit" value="Powrót" />
+                <input type="submit" name="submit" class="btn btn-outline-primary" value="Powrót" />
             </form>
         </div>
         <div class="row">

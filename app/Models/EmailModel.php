@@ -5,5 +5,4 @@ use CodeIgniter\Model;
 class EmailModel extends Model
 {
     protected $allowedFields = ['name','email','message'];
-
 }

@@ -14,17 +14,20 @@ class Statics extends Controller{
     public function contact(){
         echo view('statics/menu');
         echo view('statics/contact');
+        echo view('statics/footer');
     }
+    
+   
 
     public function send(){
-        
+          
         echo view('statics/menu');
         $msg = new EmailModel();
 
         if ($this->request->getMethod() === 'post' && $this->validate([
             'name' => [
                 'label' => 'name',
-                'rules' => 'required|min_length[3]|max_length[30]|regex_match[a-zA-Z]',
+                'rules' => 'required|min_length[3]|max_length[30]|regex_match[/[a-zA-Z]|\s/]',
                 'errors' => [
                     'required' => 'Podaj swoje imię.',
                     'min_length' => 'Minimalna długość imienia to 3 litery.',
@@ -48,13 +51,22 @@ class Statics extends Controller{
                 'errors' => [
                     'required' => 'Napisz swoją wiadomość.',
                     'min_length' => 'Minimalna długość wiadomości to 20 liter.',
-                    'max_length' =>  'Minimalna długość wiadomości to 1000 liter.'
+                    'max_length' =>  'Maksymalna długość wiadomości to 1000 liter.'
                 ]
             ],
+
+            'reCaptcha2' => [
+                'label' => 'reCaptcha2',
+                'rules' => 'required|reCaptcha2[]',
+                'errors' => [
+                    'required' => 'Uzupełnij reCaptcha.'
+                ]
+            ],
+           
         ]))
     {
-
     
+       
         $email = \Config\Services::email();
         $email->setFrom($this->request->getPost('email'));
         $email->setTo('kontakt@przemyslawprzewoznik.pl');
